@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>support</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">
+
+
+html {
+font-size: 62.5%;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+body {
+font-size: 1.8rem;
+line-height: 1.618;
+max-width: 38em;
+margin: auto;
+color: #c9c9c9;
+background-color: #222222;
+padding: 13px;
+}
+@media (max-width: 684px) {
+body {
+font-size: 1.53rem;
+}
+}
+@media (max-width: 382px) {
+body {
+font-size: 1.35rem;
+}
+}
+h1, h2, h3, h4, h5, h6 {
+line-height: 1.1;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+font-weight: 700;
+margin-top: 3rem;
+margin-bottom: 1.5rem;
+overflow-wrap: break-word;
+word-wrap: break-word;
+-ms-word-break: break-all;
+word-break: break-word;
+}
+h1 {
+font-size: 2.35em;
+}
+h2 {
+font-size: 2em;
+}
+h3 {
+font-size: 1.75em;
+}
+h4 {
+font-size: 1.5em;
+}
+h5 {
+font-size: 1.25em;
+}
+h6 {
+font-size: 1em;
+}
+p {
+margin-top: 0px;
+margin-bottom: 2.5rem;
+}
+small, sub, sup {
+font-size: 75%;
+}
+hr {
+border-color: #ffffff;
+}
+a {
+text-decoration: none;
+color: #ffffff;
+}
+a:visited {
+color: #e6e6e6;
+}
+a:hover {
+color: #c9c9c9;
+border-bottom: 2px solid #c9c9c9;
+}
+ul {
+padding-left: 1.4em;
+margin-top: 0px;
+margin-bottom: 2.5rem;
+}
+li {
+margin-bottom: 0.4em;
+}
+blockquote {
+margin-left: 0px;
+margin-right: 0px;
+padding-left: 1em;
+padding-top: 0.8em;
+padding-bottom: 0.8em;
+padding-right: 0.8em;
+border-left: 5px solid #ffffff;
+margin-bottom: 2.5rem;
+background-color: #4a4a4a;
+}
+blockquote p {
+margin-bottom: 0;
+}
+img, video {
+height: auto;
+max-width: 100%;
+margin-top: 0px;
+margin-bottom: 2.5rem;
+}
+
+pre {
+background-color: #4a4a4a;
+display: block;
+padding: 1em;
+overflow-x: auto;
+margin-top: 0px;
+margin-bottom: 2.5rem;
+font-size: 0.9em;
+}
+code, kbd, samp {
+font-size: 0.9em;
+padding: 0 0.5em;
+background-color: #4a4a4a;
+white-space: pre-wrap;
+}
+pre > code {
+padding: 0;
+background-color: transparent;
+white-space: pre;
+font-size: 1em;
+}
+
+table {
+text-align: justify;
+width: 100%;
+border-collapse: collapse;
+}
+td, th {
+padding: 0.5em;
+border-bottom: 1px solid #4a4a4a;
+}
+
+input, textarea {
+border: 1px solid #c9c9c9;
+}
+input:focus, textarea:focus {
+border: 1px solid #ffffff;
+}
+textarea {
+width: 100%;
+}
+.button, button, input[type=submit], input[type=reset], input[type=button] {
+display: inline-block;
+padding: 5px 10px;
+text-align: center;
+text-decoration: none;
+white-space: nowrap;
+background-color: #ffffff;
+color: #222222;
+border-radius: 1px;
+border: 1px solid #ffffff;
+cursor: pointer;
+box-sizing: border-box;
+}
+.button[disabled], button[disabled], input[type=submit][disabled], input[type=reset][disabled], input[type=button][disabled] {
+cursor: default;
+opacity: 0.5;
+}
+.button:focus:enabled, .button:hover:enabled, button:focus:enabled, button:hover:enabled, input[type=submit]:focus:enabled, input[type=submit]:hover:enabled, input[type=reset]:focus:enabled, input[type=reset]:hover:enabled, input[type=button]:focus:enabled, input[type=button]:hover:enabled {
+background-color: #c9c9c9;
+border-color: #c9c9c9;
+color: #222222;
+outline: 0;
+}
+textarea, select, input {
+color: #c9c9c9;
+padding: 6px 10px; 
+margin-bottom: 10px;
+background-color: #4a4a4a;
+border: 1px solid #4a4a4a;
+border-radius: 4px;
+box-shadow: none;
+box-sizing: border-box;
+}
+textarea:focus, select:focus, input:focus {
+border: 1px solid #ffffff;
+outline: 0;
+}
+input[type=checkbox]:focus {
+outline: 1px dotted #ffffff;
+}
+label, legend, fieldset {
+display: block;
+margin-bottom: 0.5rem;
+font-weight: 600;
+}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="support-pour-le-cours-de-ci-cd">Support pour le cours de
+CI-CD</h1>
+<h2 id="définition-des-termes">Définition des termes</h2>
+<h4 id="intégration">Intégration</h4>
+<p>L’intégration d’un projet informatique consiste à rassembler des
+segments de codes développés par différents développeurs, voirs
+différentes équipes, et de s’assurer du bon fonctionnement du code.
+L’intégration contient aussi l’étape de build et packaging du logiciel.
+Une fois l’intégration terminée, un logiciel est censé pouvoir être
+livré et déployé.</p>
+<h4 id="ci-continuous-integration">CI (Continuous Integration)</h4>
+<p>Il s’agit d’une pratique de développement qui consiste à effectuer
+<strong>l’intégration</strong> d’un projet informatique fréquemment. Ce
+processus est aujourd’hui en grande partie effectué via des outils
+d’automatisation (Gitlab-CI, Github actions, CircleCI, Travis CI
+etc).</p>
+<h4 id="cd-continuous-delivery">CD (Continuous Delivery)</h4>
+<p>En français, il s’agit de la distribution continue. Il s’agit d’une
+étape qui vient après l’intégration continue et qui consiste à livrer
+chaque build du projet sur un référentiel (Docker hub, Maven, Nexus etc)
+afin qu’il puisse être déployé.</p>
+<h4 id="cd-continuous-deployment">CD (Continuous Deployment)</h4>
+<p>L’autre <strong>CD</strong> fait référence au déploiement continu. En
+plus de livrer automatiquement chaque build du projet, le build sera
+déployé automatiquement sur un environnement. Certaines équipes très
+matures vont même jusqu’à déployer automatiquement en
+<strong>production</strong> via des stratégies de déploiement plus
+avancées. (Canary release, Blue/Green Deployment, A/B Deployment)</p>
+<p>Cela peut sembler risqué, mais à titre d’exemple, GitHub réalise près
+de 150 déploiements par semaine en production.</p>
+<h4 id="utilisation-des-termes">Utilisation des termes</h4>
+<p>Aujourd’hui, ces termes sont souvents utilisés de manières
+interchangeables. Ces termes font aussi souvent références aux outils
+d’automatisation plutôt qu’au processus. Mais il faut garder à l’esprit
+qu’il s’agit bien à la base d’une méthodologie et d’une philosophie de
+travail avant tout.</p>
+<h2 id="les-avantages">Les avantages</h2>
+<h4 id="intégration-continue">Intégration continue</h4>
+<ul>
+<li><p>Réduire les risques engendrés par une integration
+tardive.</p></li>
+<li><p>Améliorer la qualité du produit en découvrant les bugs le plus
+tôt possible. Il est plus simple de résoudre un bug lorsqu’il est
+découvert rapidement.</p></li>
+<li><p>Permet de livrer/déployer plus fréquemment</p></li>
+<li><p>Améliore la collaboration et la communication au sein d’une
+équipe</p></li>
+</ul>
+<h4 id="continuous-delivery-deployment">Continuous Delivery /
+Deployment</h4>
+<ul>
+<li><p>Elimine les procédures manuelles qui sont propices à l’erreur
+humaine.</p></li>
+<li><p>Permet d’avoir des release fréquentes. (jusqu’à plusieurs fois
+par jour pour les équipes les plus matures) Cela permet de mettre en
+ligne des corrections de bugs rapidement pour satisfaire les
+utilisateurs, ou bien d’avoir du feedback très tôt sur une
+feature.</p></li>
+<li><p>Facilite le rollback. S’il est possible de déployer en quelques
+minutes avec une procédure automatique, il est aussi possible
+d’effectuer un retour en arrière lorsqu’un problème majeur n’a pas été
+trouvé avant la mise en production.</p></li>
+<li><p>Moins de risques lors des mises en production. Déployer
+fréquemment permet de mettre en production des petits incréments qui
+seront moins risqués. Si vous déployez en production tout les 6 mois,
+comment garantir que le passage de l’ancienne version à la version
+actuelle va fonctionner ? Est-ce que la base de données va bien se
+mettre à jour ? Faudra-t-il des scripts customs pour mettre à jour les
+données ? Faut-il passer par des versions intermédiaires pour garantir
+l’intégrité des données ? etc…</p></li>
+<li><p>Permet de mettre en place des stratégies de tests plus poussées
+(Générer des environnement à la volée pour les équipes QA par
+exemple)</p></li>
+<li><p>Permet de mettre en place des feature flags</p></li>
+<li><p>Permet la mise en place de stratégies de déploiement plus
+avancées comme l’A/B testing, le Blue/Green deployment, les cannary
+release.</p></li>
+</ul>
+<h2 id="brève-histoire">Brève histoire</h2>
+<ul>
+<li><p>Pratique introduite par Kent Beck en 1999 dans son livre sur sa
+méthodologie Extreme Programming.</p></li>
+<li><p>Création de CruiseControl, premier outil dédié à l’intégration
+continue, en 2001 par ThoughtWorks. <a href="http://cruisecontrol.sourceforge.net/">http://cruisecontrol.sourceforge.net/</a></p></li>
+<li><p>Première release de Hudson, ancêtre de Jenkins en 2005.</p></li>
+<li><p>Après un rachat puis changement de licence de Hudson en 2010 par
+Oracle, l’ancienne équipe de Hudson part pour former Jenkins en
+2011</p></li>
+<li><p>2ème génération d’outils de CI/CD suite à Jenkins (CricleCI,
+Travis, Gitlab-ci)</p></li>
+<li><p>3ème génération d’outils (Principalement GitHub Actions)</p></li>
+</ul>
+<h2 id="les-grands-principes-de-lintégration-continue">Les grands
+principes de l’intégration continue</h2>
+<ul>
+<li><p>Utiliser un système de gestion de versions (Comme Git) afin de
+centraliser le code. Aujourd’hui, la plupart des équipes utilisent un
+VCS, mais dans les années 2000 ce n’était pas une pratique
+courante.</p></li>
+<li><p>Automatiser le build et les tests. Effectuer un build manuel
+ainsi que des tests est une perte de temps pour la plupart des
+développeurs. Cela est aussi propice à l’erreur humaine. Automatiser le
+build ainsi que le lancement de tests unitaires permet de détécter une
+majorité de problèmes de manière rapide.</p></li>
+<li><p>Faire des commits réguliers et le plus souvent possible (de
+préférence une fois par jour au moins). Le but est d’améliorer la
+visibilité du système, mais aussi de détécter les problèmes
+rapidement.</p></li>
+<li><p>Ecrire des tests unitaires. Simplement effectuer le build d’un
+projet ne suffit à assurer que tout fonctionne. Avoir de <strong>bons
+tests unitaires</strong> va permettre d’assurer qu’un build qui passe
+tout les tests puisse être déployé sur un environnement sans
+craintes.</p></li>
+<li><p>Chaque commit sur la branche principale doit lancer une pipeline
+d’intégration. Chaque développeur se base sur la branche principale pour
+ses développements. Il faut s’assurer qu’à tout moment, la branche
+principale passe les critères de qualité.</p></li>
+<li><p>La pipeline d’intégration qui tourne sur la branche principale
+doit être rapide (10 minutes maximum). Il est possible d’avoir plusieurs
+pipelines dans un projet. Il est important de garder une pipeline rapide
+qui permet aux développeurs d’avoir du feedback rapidement. Cette
+pipeline peut contenir seulement les tests unitaires, la vérification du
+lint du code source ainsi que le build du projet par exemple. Il est
+possible de rajouter ensuite une deuxième pipeline plus longue qui va
+tourner à la demande des développeurs avant un déploiement par
+exemple.</p></li>
+<li><p>La pipeline doit contenir des petites étapes qui arrêtent
+l’entièreté du processus en cas d’échec.</p></li>
+<li><p>Il faut pouvoir accéder aux logs de chaque étape afin de pouvoir
+comprendre les potentiels problèmes</p></li>
+<li><p>Réparer le plus rapidement possible un build qui ne passe pas. Si
+un build sur la branche principale ne passe pas, il est important de le
+réparer immédiatement. La branche principale sert de source pour tout
+les développeurs, il est important de la garder dans un état
+stable.</p></li>
+</ul>
+<h2 id="les-points-qui-facilitent-la-mise-en-place-du-déploiement-continue">Les
+points qui facilitent la mise en place du déploiement continue</h2>
+<ul>
+<li><p>Avoir un process d’intégration continue (CI) robuste. C’est la
+brique principale à implémenter avant de mettre en place</p></li>
+<li><p>Avoir un processus de qualité robuste qui inclue de préférence
+des tests end-to-end, des tests de montée en charge, des tests de
+sécurité etc. Le but est de pouvoir assurer automatiquement que le
+chemin critique de votre application (les features principales) est
+fonctionnel et que votre feature ne contient pas de vulnérabilités
+majeures.</p></li>
+<li><p>Mettre en place de l’IaC (Infrastructure as code) et de la CaC
+(Configuration as Code) avec des outils comme Salt, Ansible, Kubernetes,
+Terraform etc</p></li>
+<li><p>Avoir un processus de déploiement avec zéro downtime (Une mise en
+production ne déclenche pas un arrêt de service de l’application) comme
+du blue/green deployment ou Canary Release.</p></li>
+<li><p>Mettre en place un système de monitoring et de remontée
+d’alertes. Si vous souhaitez déployer automatiquement en production, il
+faut être capable de repérer rapidemment les erreurs afin de pouvoir
+effectuer un retour en arrière. Vous pouvez utiliser des outils comme
+Elasticsearch, DataDog, Prometheus etc</p></li>
+<li><p>Mettre en place un système de rollback poussé. En lien avec le
+point précédent, si votre système de monitoring détecte une erreur lors
+du déploiement, ou bien une erreur critique sur une feature, il faut
+pouvoir automatiquement revenir à la version précédente. Attention, il
+faut aussi prévoir le rollback sur les schémas de base de données qui
+est souvent un point négligé.</p></li>
+<li><p>Mettre en place du monitoring du comportement utilisateur pour
+avoir du feedback et détecter de potentielles erreurs. Vous pouvez
+utiliser des outils comme Matomo, Google analytics etc</p></li>
+</ul>
+<h2 id="ressources">Ressources</h2>
+<ul>
+<li>Articles :
+<ul>
+<li><a href="https://martinfowler.com/articles/continuousIntegration.html">https://martinfowler.com/articles/continuousIntegration.html</a></li>
+<li><a href="https://martinfowler.com/books/continuousDelivery.html">https://martinfowler.com/books/continuousDelivery.html</a></li>
+<li><a href="https://www.thoughtworks.com/continuous-integration">https://www.thoughtworks.com/continuous-integration</a></li>
+<li><a href="https://resources.github.com/ci-cd/">https://resources.github.com/ci-cd/</a></li>
+<li><a href="https://github.blog/2021-01-25-improving-how-we-deploy-github/">https://github.blog/2021-01-25-improving-how-we-deploy-github/</a></li>
+<li><a href="https://services.google.com/fh/files/misc/state-of-devops-2014.pdf">https://services.google.com/fh/files/misc/state-of-devops-2014.pdf</a></li>
+<li><a href="https://services.google.com/fh/files/misc/state-of-devops-2015.pdf">https://services.google.com/fh/files/misc/state-of-devops-2015.pdf</a></li>
+<li><a href="https://services.google.com/fh/files/misc/state-of-devops-2016.pdf">https://services.google.com/fh/files/misc/state-of-devops-2016.pdf</a></li>
+<li><a href="https://services.google.com/fh/files/misc/state-of-devops-2017.pdf">https://services.google.com/fh/files/misc/state-of-devops-2017.pdf</a></li>
+<li><a href="https://services.google.com/fh/files/misc/state-of-devops-2018.pdf">https://services.google.com/fh/files/misc/state-of-devops-2018.pdf</a></li>
+<li><a href="https://services.google.com/fh/files/misc/state-of-devops-2019.pdf">https://services.google.com/fh/files/misc/state-of-devops-2019.pdf</a></li>
+<li><a href="https://services.google.com/fh/files/misc/state-of-devops-2021.pdf">https://services.google.com/fh/files/misc/state-of-devops-2021.pdf</a></li>
+<li><a href="https://services.google.com/fh/files/misc/2022_state_of_devops_report.pdf">https://services.google.com/fh/files/misc/2022_state_of_devops_report.pdf</a></li>
+<li><a href="https://medium.engineering/kubernetes-infrastructure-at-medium-d9e2444932ef">https://medium.engineering/kubernetes-infrastructure-at-medium-d9e2444932ef</a></li>
+<li><a href="https://docs.gitlab.com/ee/operations/feature_flags.html">https://docs.gitlab.com/ee/operations/feature_flags.html</a></li>
+<li><a href="https://12factor.net/">https://12factor.net/</a></li>
+<li><a href="https://engineering.atspotify.com/2022/11/spotifys-vulnerability-management-platform/">https://engineering.atspotify.com/2022/11/spotifys-vulnerability-management-platform/</a></li>
+</ul></li>
+<li>Livres :
+<ul>
+<li>Extreme Programming Explained</li>
+<li>The phoenix project</li>
+<li>Continuous Delivery: Reliable Software Releases through Build, Test,
+and Deployment Automation</li>
+</ul></li>
+<li>Documentations utiles pour le projet :
+<ul>
+<li><a href="https://docs.docker.com/reference/">Documentation
+Docker</a>
+<ul>
+<li><a href="https://docs.docker.com/engine/reference/commandline/build/">Build</a></li>
+<li><a href="https://docs.docker.com/engine/reference/commandline/push/">Push</a></li>
+<li><a href="https://docs.docker.com/engine/reference/builder/">Référence
+Dockerfile</a></li>
+</ul></li>
+<li><a href="https://docs.gitlab.com/ee/topics/build_your_application.html">Documentation
+Gitlab CI</a>
+<ul>
+<li><a href="https://docs.gitlab.com/ee/ci/yaml/">Référence de la
+syntaxe</a></li>
+<li><a href="https://docs.gitlab.com/ee/ci/yaml/yaml_optimization.html">Guide
+pour opti le YAML</a></li>
+</ul></li>
+<li><a href="https://github.com/MuhammedKalkan/OpenLens/releases">Releases
+OpenLens (Outil de monitoring Kubernetes)</a></li>
+<li><a href="https://kubernetes.io/docs/home/">Doc Kubernetes</a>
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">Deployments</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/services-networking/service/">Services</a></li>
+<li><a href="https://kubernetes.io/docs/concepts/services-networking/ingress/">Ingresses</a></li>
+<li><a href="https://cert-manager.io/docs/">Cert Manager</a></li>
+</ul></li>
+<li><a href="https://helm.sh/docs/">Doc Helm</a>
+<ul>
+<li><a href="https://helm.sh/docs/chart_template_guide/getting_started/">Getting
+Started</a></li>
+<li><a href="https://helm.sh/docs/chart_template_guide/values_files/">Injecter
+des variables dans une charte</a></li>
+<li><a href="https://helm.sh/docs/helm/helm/">Référence du CLI</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</body>
+</html>
