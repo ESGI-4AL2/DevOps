@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>notation</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">
+
+
+html {
+font-size: 62.5%;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+body {
+font-size: 1.8rem;
+line-height: 1.618;
+max-width: 38em;
+margin: auto;
+color: #c9c9c9;
+background-color: #222222;
+padding: 13px;
+}
+@media (max-width: 684px) {
+body {
+font-size: 1.53rem;
+}
+}
+@media (max-width: 382px) {
+body {
+font-size: 1.35rem;
+}
+}
+h1, h2, h3, h4, h5, h6 {
+line-height: 1.1;
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+font-weight: 700;
+margin-top: 3rem;
+margin-bottom: 1.5rem;
+overflow-wrap: break-word;
+word-wrap: break-word;
+-ms-word-break: break-all;
+word-break: break-word;
+}
+h1 {
+font-size: 2.35em;
+}
+h2 {
+font-size: 2em;
+}
+h3 {
+font-size: 1.75em;
+}
+h4 {
+font-size: 1.5em;
+}
+h5 {
+font-size: 1.25em;
+}
+h6 {
+font-size: 1em;
+}
+p {
+margin-top: 0px;
+margin-bottom: 2.5rem;
+}
+small, sub, sup {
+font-size: 75%;
+}
+hr {
+border-color: #ffffff;
+}
+a {
+text-decoration: none;
+color: #ffffff;
+}
+a:visited {
+color: #e6e6e6;
+}
+a:hover {
+color: #c9c9c9;
+border-bottom: 2px solid #c9c9c9;
+}
+ul {
+padding-left: 1.4em;
+margin-top: 0px;
+margin-bottom: 2.5rem;
+}
+li {
+margin-bottom: 0.4em;
+}
+blockquote {
+margin-left: 0px;
+margin-right: 0px;
+padding-left: 1em;
+padding-top: 0.8em;
+padding-bottom: 0.8em;
+padding-right: 0.8em;
+border-left: 5px solid #ffffff;
+margin-bottom: 2.5rem;
+background-color: #4a4a4a;
+}
+blockquote p {
+margin-bottom: 0;
+}
+img, video {
+height: auto;
+max-width: 100%;
+margin-top: 0px;
+margin-bottom: 2.5rem;
+}
+
+pre {
+background-color: #4a4a4a;
+display: block;
+padding: 1em;
+overflow-x: auto;
+margin-top: 0px;
+margin-bottom: 2.5rem;
+font-size: 0.9em;
+}
+code, kbd, samp {
+font-size: 0.9em;
+padding: 0 0.5em;
+background-color: #4a4a4a;
+white-space: pre-wrap;
+}
+pre > code {
+padding: 0;
+background-color: transparent;
+white-space: pre;
+font-size: 1em;
+}
+
+table {
+text-align: justify;
+width: 100%;
+border-collapse: collapse;
+}
+td, th {
+padding: 0.5em;
+border-bottom: 1px solid #4a4a4a;
+}
+
+input, textarea {
+border: 1px solid #c9c9c9;
+}
+input:focus, textarea:focus {
+border: 1px solid #ffffff;
+}
+textarea {
+width: 100%;
+}
+.button, button, input[type=submit], input[type=reset], input[type=button] {
+display: inline-block;
+padding: 5px 10px;
+text-align: center;
+text-decoration: none;
+white-space: nowrap;
+background-color: #ffffff;
+color: #222222;
+border-radius: 1px;
+border: 1px solid #ffffff;
+cursor: pointer;
+box-sizing: border-box;
+}
+.button[disabled], button[disabled], input[type=submit][disabled], input[type=reset][disabled], input[type=button][disabled] {
+cursor: default;
+opacity: 0.5;
+}
+.button:focus:enabled, .button:hover:enabled, button:focus:enabled, button:hover:enabled, input[type=submit]:focus:enabled, input[type=submit]:hover:enabled, input[type=reset]:focus:enabled, input[type=reset]:hover:enabled, input[type=button]:focus:enabled, input[type=button]:hover:enabled {
+background-color: #c9c9c9;
+border-color: #c9c9c9;
+color: #222222;
+outline: 0;
+}
+textarea, select, input {
+color: #c9c9c9;
+padding: 6px 10px; 
+margin-bottom: 10px;
+background-color: #4a4a4a;
+border: 1px solid #4a4a4a;
+border-radius: 4px;
+box-shadow: none;
+box-sizing: border-box;
+}
+textarea:focus, select:focus, input:focus {
+border: 1px solid #ffffff;
+outline: 0;
+}
+input[type=checkbox]:focus {
+outline: 1px dotted #ffffff;
+}
+label, legend, fieldset {
+display: block;
+margin-bottom: 0.5rem;
+font-weight: 600;
+}
+</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="les-éléments-évalués-lors-de-la-soutenance">Les éléments évalués
+lors de la soutenance</h1>
+<h2 id="minimum-attendu-pour-avoir-genre-11-quoi">Minimum attendu (Pour
+avoir genre 11 quoi)</h2>
+<ul>
+<li>Avoir un projet en ligne sur Github/Gitlab/Autre chose</li>
+<li>Utiliser des conteneurs</li>
+<li>Avoir une pipeline automatique qui se lance à chaque commit de la
+branche main</li>
+<li>La pipeline doit avoir au minimum les étapes suivantes :
+<ul>
+<li>Des test unitaires</li>
+<li>Un build du projet</li>
+<li>Une mise en ligne du livrable (Sur dockerhub par exemple)</li>
+</ul></li>
+<li>La pipeline doit s’arrêter si une des étapes échoue.</li>
+<li>Déployer sur Kubernetes (Même si c’est fait à la main, c’est
+ok)</li>
+<li>Pouvoir faire une démonstration de bout en bout allant d’un commit
+sur le projet au déploiement de ce commit.</li>
+<li>Pouvoir faire une démonstration d’une pipeline qui échoue si jamais
+une des étapes ne passe pas.</li>
+</ul>
+<h2 id="exemples-déléments-supplémentaires-qui-seront-pris-en-compte-sans-ordre-de-priorité">Exemples
+d’éléments supplémentaires qui seront pris en compte (Sans ordre de
+priorité)</h2>
+<h3 id="les-trucs-pas-trop-durs">Les trucs pas trop durs</h3>
+<ul>
+<li>Mise en place d’un linter dans une pipeline automatique</li>
+<li>Mise en place d’une pipeline pour des merge request/pull
+request</li>
+<li>Mise en place d’une pipeline pour déployer des release github/gitlab
+(Pipeline sur des tags)</li>
+<li>Calculer et afficher le coverage des tests unitaires dans les
+merge/pull requests</li>
+<li>Avoir une pipeline pour déployer le projet sur Kubernetes, la
+pipeline peut être lancée manuellement</li>
+<li>Déploiement sur Kubernetes avec Helm</li>
+</ul>
+<h3 id="les-trucs-un-peu-plus-longs">Les trucs un peu plus longs</h3>
+<ul>
+<li>Mise en place d’un outil de qualité de code (SonarCloud, Code
+Climate) dans une pipeline automatique</li>
+<li>Afficher le rapport de qualité de code dans une merge/pull request
+et bloquer la validation si la qualité descend en dessous d’un
+seuil</li>
+<li>Mise en place de tests automatiques supplémentaires (Tests e2e,
+tests de montée en charge) dans une pipeline automatique</li>
+<li>Créer un outil qui va communiquer avec l’api gitlab/github pour
+déployer votre projet (backend et frontend). Il peut s’agir d’un chatbot
+discord/slack, d’un outil en ligne de commande, d’une petite api avec
+une interface web simple.</li>
+<li>Ajouter une route de healthcheck sur votre backend pour vérifier
+l’état après un déploiement</li>
+<li>Ajouter une pipeline qui va utiliser la route de healthcheck pour
+confirmer que le déploiement est correct</li>
+<li>Mise en place d’outils de monitoring (Prometheus)</li>
+<li>Mise en place d’outils de gestion des logs (Elasticsearch)</li>
+<li>Création d’environnements à la volée (Pouvoir mettre en ligne un
+nouvel environnement avec une pipeline)</li>
+</ul>
+</body>
+</html>
